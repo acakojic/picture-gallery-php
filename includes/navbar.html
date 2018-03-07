@@ -1,0 +1,31 @@
+<div class="navbar">
+<ul>
+<?php
+if (file_exists('index.php')){
+	?>
+    <li>[<a href="index.php">Home</a>]</li>
+	<?php
+	}else{
+	?>
+    <li>[<a href="../index.php">Home</a>]</li>
+	<?php
+	}
+    ?>
+    <li>[<a href="pictures.php">Pictures</a>]</li>
+<?php
+
+if (isset ($_SESSION['username'])){
+    ?>
+	<li>[<a href="logout.php">Logout <?php echo '"' . $_SESSION['username'] . '"'; ?></a>]</li>
+<?php
+}
+else{
+    ?>
+	<li>[<a href="login.php">Login</a>]</li>
+	<li>[<a href="registration.php">Registration</a>]</li>
+<?php
+}
+?>
+
+</ul>
+</div> <!-- end of <div class="navbar"> -->
